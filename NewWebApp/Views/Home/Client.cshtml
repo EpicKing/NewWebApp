@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Client";
+}
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <div class="col-md-5">
+        <form method="post" action="client">
+            <div>
+                <label>Форма для заполнения</label>
+            </div>
+            <div>
+                <label>
+                    Имя
+                    <input type="text" name="name"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Номер телефона
+                    <input type="text" name="phone"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="submit" value="Отправить"/>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        Информация о клиентах
+        <table style="width: 50%;">
+            @{
+                for (int i = 0; i < 4; i++)
+                {
+                    <tr>
+                        <td>Имя @i</td>
+                        <td>Телефон @i</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
+</div>

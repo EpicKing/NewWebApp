@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Services";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" action="services">
+            <div>
+                <label>Форма для заполнения</label>
+            </div>
+            <div>
+                <label>
+                    Название
+                    <input type="text" name="name" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Описание
+                    <input type="text" name="descript" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Цена
+                    <input type="text" name="prices" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="submit" value="Добавить" />
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        Услуги
+        <table>
+            @{
+                for (int i = 0; i < 4; i++)
+                {
+                    <tr>
+                        <td>[Данные удалены]</td>
+                        <td>[Данные удалены]</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
