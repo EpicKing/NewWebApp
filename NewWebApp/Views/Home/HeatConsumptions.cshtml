@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Потребление энергии";
+}
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <div class="col-md-5">
+        <form method="post" action="HeatConsumptions">
+            <div>
+                <label>Форма для заполнения</label>
+            </div>
+            <div>
+                <label>
+                    Всего
+                    <input type="text" name="total" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Год
+                    <input type="text" name="year" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Квартал
+                    <input type="text" name="quarter" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="submit" value="Отправить" />
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        Информация о потреблении энергии
+        <table style="width: 50%;">
+            @{
+                for (int i = 0; i < 4; i++)
+                {
+                    <tr>
+                        <td>Всего @i</td>
+                        <td>Год @i</td>
+                        <td>Квартал @i</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
+</div>

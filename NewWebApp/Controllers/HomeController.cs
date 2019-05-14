@@ -10,43 +10,49 @@ namespace NewWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult HeatConsumptions()
         {
             return View();
         }
 
-        public IActionResult Client()
+        [HttpGet]
+        public IActionResult Organizations()
         {
             return View();
         }
 
-        public IActionResult Employees()
+        [HttpGet]
+        public IActionResult TypeOfProducts()
         {
             return View();
         }
 
-        public IActionResult Services()
+        [HttpPost]
+        public string Organizations(string name, string type, string address)
         {
-            return View();
+            return "Организация с названием \"" + name + "\" и видом собственности \"" + type 
+                   + "\" расположенная по адресу \"" + address + "\"  добавлена в базу";
+        }
+
+        [HttpPost]
+        public string TypeOfProducts(string name, string unit)
+        {
+            return "Вид продукции с названием \"" + name + "\" и видом единицей измерения \"" + unit
+                   + "\" добавлен в базу";
+        }
+
+        [HttpPost]
+        public string HeatConsumption(int total, int year, int quarter)
+        {
+            return "Всего потреблено энергии  \"" + total + "\" в \"" + year
+                   + "\" году в \"" + quarter + "\" квартале. Запись добавлена в базу";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
